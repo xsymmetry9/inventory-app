@@ -6,4 +6,19 @@ const getItems = async (req, res) =>{
     res.render("index", {title: "Testing", items: items});
 }
 
-module.exports = {getItems}
+const addItemPage = async(req, res) =>{
+    res.render("./pages/add", {title: "items"})
+}
+
+const addItem = async(req, res) =>{
+    const {itemName, price, quantity, inventoryList} = req.body;
+    console.log("New item:", itemName);
+    console.log("Price:", price);
+    console.log("Quantity:", quantity);
+    console.log("Name of Inventory List:", inventoryList);
+
+    await db.addItem(inventoryList, itemName);
+
+    res.redirect("/");
+}
+module.exports = {getItems, addItemPage, addItem}

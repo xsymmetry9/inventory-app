@@ -1,0 +1,18 @@
+<%- include('../partials/header.ejs'); %>
+    <div class="box" id="heading">
+        <h1><%= title %></h1>
+    </div>
+    <div class="box">
+        <form action="/add" method="POST">
+            <label for="itemName">Name</label>
+            <input type="text" name="itemName" placeholder="New Item" autocomplete="off" autofocus="true" required/>
+            <label for="price">Price</label>
+            <input type="text" name="price" placeholder="price" autocomplete="off" autofocus="true" required/>
+            <label for="quantity">Quantity</label>
+            <input type="text" name="quantity" placeholder="quantity" autocomplete="off" autofocus="true" required/>
+            <button type="submit" name="inventoryList" value=<%= title %>>+</button>
+            <button type="button" onclick="window.location.href='/'">Cancel</button>
+        </form>
+    </div>
+</html>
+<%- include('../partials/footer.ejs'); %>

@@ -1,9 +1,8 @@
-<html>
-    <head>
-        <link rel="stylesheet" href="./style.css">
-    </head>
-    <body>
+<%- include('partials/header.ejs'); %>
+    <div class="box" id="heading">
         <h1><%= title %></h1>
+    </div>
+    <div class="box">
         <ul>
             <% for (let i = 0; i <items.length; i++) { %>
                 <li>
@@ -11,5 +10,8 @@
                 </li>
             <% } %>
         </ul>
-    </body>
-</html>
+        <a href="/add">Add a new item</a>
+    </div>
+
+<%- include('partials/footer.ejs'); %>
+        
