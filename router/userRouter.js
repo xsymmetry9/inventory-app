@@ -9,6 +9,15 @@ router.get("/", userController.getItems);
 router.get("/add", userController.addItemPage);
 
 // Adds item to table
-router.post("/add", userController.addItem);
+router.post("/add", userController.createItem);
 
-module.exports= router;
+// Deletes the item
+router.post("/delete", userController.removeItem);
+
+// Edits the item
+router.get('/:id/edit', userController.toEditPage);
+
+router.post("/:id/edit", userController.editItem);
+
+
+module.exports = router;

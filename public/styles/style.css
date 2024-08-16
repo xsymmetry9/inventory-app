@@ -1,0 +1,127 @@
+:root{
+    --color-1: #131842;
+    --color-2: #E68369;
+    --color-3: #ECCEAE;
+    --color-4: #FBF6E2;
+    ;
+    
+}
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    min-height: 95vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: var(--color-1);
+    color: var(--color-4);
+}
+main{
+    text-align: center;
+}
+h1{
+    text-align: center;
+    font-size: 3rem;
+    padding: 10px;
+}
+
+li{
+    list-style: none;
+}
+
+.box{
+    width: 100%;
+    max-width: 1100px;
+    margin-inline: auto;
+
+}
+
+.table{
+    width: 100%;
+    max-width: 800px;
+    margin-inline: auto;
+    display: grid;
+    outline: 2px solid black;
+}
+.table-header{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 12px 8px;
+}
+.row{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 25px;
+    background-color: rgb(67, 210, 67);
+    padding: 12px 8px;
+
+    position: relative;
+
+}
+
+.row:nth-child(2n){
+    background-color: rgb(198, 238, 198);
+    color: black;
+}
+
+.card-title{
+    text-transform: capitalize;
+}
+
+.delete-btn{
+    cursor: pointer;
+    font-size: 12px;
+    color: white;
+    background-color: rgb(200, 43, 43);
+    border: none;
+    padding: 4px 8px;
+    border-radius: 5px;
+}
+.delete-btn:focus, .delete-btn:hover{
+    background-color: rgba(255, 2, 2, 0.6);
+}
+
+.floating-buttons{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    bottom: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.hidden{
+    display: none;
+}
+
+.icon{
+    width: 18px;
+    height: auto;
+}
+
+.box-container{
+    width: 500px;
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    align-items: center;
+    background-color: var(--color-3);
+    color: black;
+    border-radius: 25px;
+    border: none;
+    padding: 3rem;
+    flex-direction: column;
+}
+
+.box-container-title{
+    width: 200px;
+}
+footer{
+    flex: 0 0 auto;
+    text-align: center;
+}

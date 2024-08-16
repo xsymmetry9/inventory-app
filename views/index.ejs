@@ -3,10 +3,26 @@
         <h1><%= title %></h1>
     </div>
     <div class="box">
-        <ul>
+        <ul class="table">
+            <li class="table-header">
+                <p class="card-title"><strong>title</strong></p>
+                <p class="card-title"><strong>price</strong></p>
+                <p class="card-title"><strong>quantity</strong></p>
+            </li>
             <% for (let i = 0; i <items.length; i++) { %>
-                <li>
-                    <%= items[i].title %>
+                <li class="row">
+                    <p class="card-title"><%= items[i].title %></p>
+                    <p>$<%= items[i].price %></p>
+                    <p><%= items[i].quantity %></p>
+                    <div class="floating-buttons">
+                        <form action="/delete" method="POST">
+                            <button class ="delete-btn" type="submit" name="deleteItem" value="<%= items[i].id %>">X</button>
+                        </form>
+                        <button class ="edit-btn"  onclick="window.location.href='/<%=items[i].id %>/edit'" name="editPage" value="<%= items[i].id %>">
+                                <img class= "icon" src="/assets/icons/edit.png" alt= "pencil image">
+                        </button>
+                    </div>
+               
                 </li>
             <% } %>
         </ul>

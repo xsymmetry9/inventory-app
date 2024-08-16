@@ -1,23 +1,23 @@
 <%- include('../partials/header.ejs'); %>
+
     <div class="box" id="heading">
         <h1><%= title %></h1>
     </div>
     <div class="box">
-        <form action="/add" method="POST">
+        <form action="/<%=item.id %>/edit" method="POST">
             <div class="box-container">
                 <label for="itemName"><span class="box-container-title">Name</span>
-                    <input type="text" name="itemName" placeholder="New Item" autocomplete="off" autofocus="true" required/>
+                    <input type="text" name="itemName" autocomplete="off" autofocus="true" value="<%=item.title%>" required/>
                 </label>
                 <label for="price">Price
-                    <input type="number" step="0.01" name="price" placeholder="price" autocomplete="off" autofocus="true" required/>
+                    <input type="number" name="price" step ="0.01" autocomplete="off" autofocus="true" value="<%=item.price%>"required/>
                 </label>
                 <label for="quantity">Quantity
-                    <input type="number" name="quantity" placeholder="quantity" autocomplete="off" autofocus="true" required/>
+                    <input type="number" name="quantity" autocomplete="off" autofocus="true" value="<%=item.quantity%>" required/>
                 </label>
-                <button type="submit" name="inventoryList" value=<%= title %>>+</button>
+                <button type="submit" name="id" value=<%= item.id %>>Done</button>
                 <button type="button" onclick="window.location.href='/'">Cancel</button>
             </div>
-     
         </form>
     </div>
 </html>
